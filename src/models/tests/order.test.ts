@@ -4,7 +4,7 @@ const store = new OrderStore();
 
 const testOrder: Order = {
   status: "active",
-  userId: 1,
+  userid: 1,
 };
 
 const testOrderProduct: OrderProduct = {
@@ -41,6 +41,7 @@ describe("Order Model", () => {
 
   it("show method should return the correct order", async () => {
     const result = await store.show("1");
+    console.log(result);
     expect(result).toEqual({
       id: 1,
       status: "complete",

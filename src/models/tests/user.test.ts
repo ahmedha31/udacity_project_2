@@ -7,6 +7,9 @@ const testUser: User = {
   last_name: "user",
   password: "password",
 };
+beforeAll(async () => {
+  process.env.NODE_ENV = "test";
+});
 
 describe("User Model", () => {
   it("should have an index method", () => {

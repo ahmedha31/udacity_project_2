@@ -6,8 +6,15 @@ const testProduct = {
   name: "test product",
   price: 100,
 };
+beforeAll(async () => {
+  process.env.NODE_ENV = "test";
+});
 
 describe("Product Model", () => {
+  beforeAll( () => {
+  process.env.NODE_ENV = 'test';
+  });
+
   it("should have an index method", () => {
     expect(store.index).toBeDefined();
   });

@@ -8,9 +8,9 @@ const index = async (_req: Request, res: Response) => {
   try {
     const orders = await store.index();
     res.json(orders);
-  } catch (err) {
+  } catch (err: any) {
     res.status(400);
-    res.json(err);
+    res.json(err.message);
   }
 };
 
@@ -38,7 +38,7 @@ const create = async (req: Request, res: Response) => {
   try {
     const order: Order = {
       status: req.body.status,
-      userId: req.body.userId,
+      userid: req.body.userid,
     };
     const newOrder = await store.create(order);
     res.json(newOrder);
